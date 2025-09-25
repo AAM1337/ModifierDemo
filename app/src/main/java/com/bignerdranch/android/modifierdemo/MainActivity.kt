@@ -46,6 +46,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
     val mymodifier = modifier
         .border(width = 2.dp, color = Color.Black)
         .padding(all = 10.dp)
+    val secondModifier = Modifier.height(100.dp)
     Column(
         Modifier.padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -53,7 +54,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
     ) {
         Text(
             "Hello Compose",
-            mymodifier,
+            mymodifier.then(secondModifier),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
@@ -64,8 +65,6 @@ fun DemoScreen(modifier: Modifier = Modifier) {
                 .width(270.dp)
                 .clip(shape = RoundedCornerShape(30.dp))
         )
-
-
     }
 }
 
